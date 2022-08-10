@@ -1,3 +1,5 @@
+on: [push]
+
 jobs:
   sticky_comment_test_job:
     runs-on: ubuntu-latest
