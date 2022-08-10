@@ -1,0 +1,19 @@
+name: 'Renre Sticky PR Comment'
+description: 'Create or Change a sticky comment on a PR'
+
+inputs:
+  id:
+    description: ''
+    required: false
+    default: 'sticky-pr-comment'
+  content:
+    description: 'What to write'
+    required: true
+    default: 'Woop, woop'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.id }}
+    - ${{ inputs.content }}
