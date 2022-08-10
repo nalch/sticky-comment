@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Write down sticky comment
         id: sticky-step
-        uses: nalch/sticky-comment@v1
+        uses: nalch/sticky-comment
         with:
           id: what
           content: 'Yeehaw'
