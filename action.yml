@@ -11,9 +11,19 @@ inputs:
     required: true
     default: 'Woop, woop'
 
+    #runs:
+    #  using: 'docker'
+    #  image: 'Dockerfile'
+    #  args:
+    #  - ${{ inputs.id }}
+    #  - ${{ inputs.content }}
+ 
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.id }}
-    - ${{ inputs.content }}
+  using: 'composite'
+  steps:
+    - run: printenv
+      shell: bash
+    - run: gh
+      shell: bash
+    - run: echo "${{ inputs.content }}"
+      shell: bash

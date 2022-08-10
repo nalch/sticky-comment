@@ -1,4 +1,7 @@
-on: [push]
+on:
+  pull_request:
+    branches:
+      - main
 
 jobs:
   sticky_comment_test_job:
@@ -7,7 +10,7 @@ jobs:
     steps:
       - name: Write down sticky comment
         id: sticky-step
-        uses: nalch/sticky-comment@v3
+        uses: nalch/sticky-comment@v7
         with:
           id: what
           content: 'Yeehaw'
