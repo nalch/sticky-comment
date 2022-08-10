@@ -1,0 +1,12 @@
+jobs:
+  sticky_comment_test_job:
+    runs-on: ubuntu-latest
+    name: A job to test the action
+    steps:
+      - name: Write down sticky comment
+        id: sticky-step
+        uses: nalch/sticky-comment@v1
+        with:
+          id: what
+          content: 'Yeehaw'
+
